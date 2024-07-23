@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap');
+
+    table {
+      width: 600px;
+      margin: 0 auto;
+    }
+
+    table, th, td {
+      border:1px solid gray;
+      border-collapse: collapse;
+    }
+
+    caption {
+      color: red;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    tr {
+      height: 50px;
+    }
+
+    th {
+      background-color: #eaeaea;
+    }
+
+    td {
+      text-align: center;
+      color: white;
+      font-family: "Nanum Gothic", sans-serif;
+    }
+
+    thead th {
+      font-family: "Kalnia Glaze", serif;
+    }
+
+    .eng {
+      background-color: mediumpurple;
+    }
+
+    .info {
+      background-color: darkcyan;
+    }
+
+    .file {
+      background-color: steelblue;
+    }
+
+    .cplus {
+      background-color: green;
+    }
+
+    .db {
+      background-color: rosybrown;
+    }
+
+    .os {
+      background-color: midnightblue;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <table>
+    <caption>2024년 2학기 시간표</caption>
+    <colgroup>
+      <col style="width: 10%;">
+      <col style="width: 18%;">
+      <col style="width: 18%;">
+      <col style="width: 18%;">
+      <col style="width: 18%;">
+      <col style="width: 18%;">
+    </colgroup>
+    <thead>
+      <th></th>
+      <th>MON</th>
+      <th>TUE</th>
+      <th>WEN</th>
+      <th>THU</th>
+      <th>FRI</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>1교시</th>
+        <td class="eng">영어회화</td>
+        <td></td>
+        <td rowspan="3" class="info">정보통신공학</td>
+        <td rowspan="2" class="file">파일구조</td>
+        <td rowspan="2" class="eng">영어</td>
+      </tr>
+      <tr>
+        <th>2교시</th>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>3교시</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>4교시</th>
+        <td></td>
+        <td></td>
+        <td rowspan="2" class="db">데이터베이스</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>5교시</th>
+        <td rowspan="2" class="db">데이터베이스</td>
+        <td rowspan="4" class="cplus">C++</td>
+        <td rowspan="4" class="os">운영체제</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>6교시</th>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>7교시</th>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>8교시</th>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
