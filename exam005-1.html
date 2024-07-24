@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>연습문제 4</title>
+	<style>
+		#app {  
+			width:640px;  
+			margin:0 auto;  
+			padding:5px;			
+		}
+
+		#app h1 {
+			color: white; 
+			font-size: 1em; 
+			background: #222; 
+			margin: 0; 
+			padding: 10px; 
+		}
+
+		.card {
+			border:1px solid #ccc;
+		}
+
+		.card-header {
+			margin: 20px 0;
+			text-align: center;
+			color: red;
+			font-size: 1.5em;
+			font-weight: bold;
+		}
+
+		.card-body {
+			margin: 20px 0;
+			text-align: center;
+			font-size: 1.2em;
+			line-height: 2em;
+			font-weight: bold;
+		}
+
+		.card-strong {
+			color: blue;
+		}
+
+		.small {
+			font-size: 0.7em;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<img src="images/apple.jpg" alt="가정용 꿀사과 - 흠집이 있고 약간은 못생겼지만 맛과 영양은 그대로입니다. 질좋은 사과를 저렴하게 즐겨보세요">		
+		<div>
+			<h1>확인하세요</h1>
+			<div class="card">
+				<div class="card-header">주문 및 배송</div>
+  			<div class="card-body">
+					<strong class="card-strong">오후 2시 이전</strong> 주문건은 당일 발송합니다<br>
+					2시 이후 주문건은 다음날 발송합니다(주말 제외)
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">교환 및 환불</div>
+  			<div class="card-body">
+					불만족시 <strong class="card-strong">100% 환불</strong>해 드립니다<br>
+					고객센터로 전화주세요
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">고객센터</div>
+  			<div class="card-body">
+					0000-0000<br>
+					<small class="small">상담시간 : 오전 9시 ~ 오후 6시 (토/일, 공휴일 휴무)</small>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
