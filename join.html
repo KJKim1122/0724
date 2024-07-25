@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="join.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h1>회원가입</h1>
+    <form id="signupForm">
+      <div class="form-group">
+        <label for="username">아이디:</label>
+        <input type="text" id="username" name="username" placeholder="아이디 입력" onblur="usernameCheck();">
+        <span class="error" id="username-msg"></span>
+      </div>
+      <div class="form-group">
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" placeholder="이메일 입력" onblur="emailCheck()">
+        <span class="error" id="email-msg"></span>
+      </div>
+      <div class="form-group">
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" placeholder="비밀번호 입력" onblur="passwordCheck()">
+        <span class="error" id="password-msg"></span>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">비밀번호 확인:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="비밀번호 확인" onblur="confirmPasswordCheck()">
+        <span class="error" id="confirmPassword-msg"></span>
+      </div>
+      <button type="button" onclick="join()">가입하기</button>
+    </form>
+    <script>
+      const username = document.getElementById('username');
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+      const confirmPassword = document.getElementById('confirmPassword');
+
+      const usernameMsg = document.getElementById('username-msg');
+      const emailMsg = document.getElementById('email-msg');
+      const passwordMsg = document.getElementById('password-msg');
+      const confirmPasswordMsg = document.getElementById('confirmPassword-msg');
+
+      function usernameCheck() {
+        usernameMsg.innerHTML = '';
+        usernameMsg.style.display = 'none';
+        if(username.value==='') {
+          usernameMsg.innerHTML = '아이디는 필수입력입니다';
+          usernameMsg.style.display = 'block';
+          return false;
+        }
+        return true;
+      }
+
+      function emailCheck() {
+        emailMsg.innerHTML = '';
+        emailMsg.style.display = 'none';
+        if(email.value==='') {
+          emailMsg.innerHTML = '이메일은 필수입력입니다';
+          emailMsg.style.display = 'block';
+          return false;
+        }
+        return true;
+      }
+
+      function passwordCheck() {
+        passwordMsg.innerHTML = '';
+        passwordMsg.style.display = 'none';
+        if(password.value==='') {
+          passwordMsg.innerHTML = '비밀번호는 필수입력입니다';
+          passwordMsg.style.display = 'block';
+          return false;
+        }
+        return true;
+      }
+
+      function confirmPasswordCheck() {
+        confirmPasswordMsg.innerHTML = '';
+        confirmPasswordMsg.style.display = 'none';
+        if(confirmPassword.value==='') {
+          confirmPasswordMsg.innerHTML = '비밀번호는 필수입력입니다';
+          confirmPasswordMsg.style.display = 'block';
+          return false;
+        }
+        if(confirmPassword.value!==password.value) {
+          confirmPasswordMsg.innerHTML = '비밀번호가 일치하지 않습니다';
+          confirmPasswordMsg.style.display = 'block';
+          return false;
+        }
+        return true;
+      }
+
+      function join() {
+        const usernameCheckResult = usernameCheck();
+        const emailCheckResult = emailCheck();
+        const passwordCheckResult = passwordCheck();
+        const confirmPasswordCheckResult = confirmPasswordCheck();
+        if(usernameCheckResult && emailCheckResult && passwordCheckResult && confirmPasswordCheckResult) 
+          alert('서버로 전송합니다');
+        else
+          return;
+      }
+    </script>
+</div>  
+</body>
+</html>
