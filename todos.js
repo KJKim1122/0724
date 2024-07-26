@@ -4,8 +4,8 @@ let todoCount = 0;
 function addTodo() {
   const title = document.getElementById('todo-title').value;
   if (title === '') {
-      alert('할일을 입력하세요');
-      return;
+    alert('할일을 입력하세요');
+    return;
   }
 
   todoCount++;
@@ -17,7 +17,7 @@ function addTodo() {
   
   todos.push(newTodo);
   document.getElementById('todo-title').value = '';
-  updateTable();
+  printTodos();
 }
 
 function deleteTodo(tno) {
@@ -25,21 +25,22 @@ function deleteTodo(tno) {
     if(todos[i].tno===tno)
       todos.splice(i, 1);
   }
-  updateTable();
+  printTodos();
 }
 
-function updateTable() {
+function printTodos() {
   const todoBody = document.getElementById('todo-body');
   todoBody.innerHTML = '';
-  todos.forEach(todo => {
+  for(let i=0; i<todos.length; i++) {
     const row = `
       <tr>
-          <td>${todo.tno}</td>
-          <td>${todo.title}</td>
-          <td>${todo.date}</td>
-          <td><button class="delete" onclick="deleteTodo(${todo.tno})">삭제</button></td>
+          <td>${todos[i].tno}</td>
+          <td>${todos[i].title}</td>
+          <td>${todos[i].date}</td>
+          <td><button class="delete" onclick="deleteTodo(${todos[i].tno})">삭제</button></td>
       </tr>
     `;
+    console.log(row);
     todoBody.innerHTML += row;
-  });
+  }
 }
